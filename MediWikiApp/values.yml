@@ -1,0 +1,9 @@
+mediawiki:
+  image:
+    repository: mediawiki
+    tag: latest
+  database:
+    name: my_wiki
+    user: wikiuser
+    password: example
+    rootPassword: 'yes'
