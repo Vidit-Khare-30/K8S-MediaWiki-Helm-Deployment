@@ -1,12 +1,15 @@
+# templates/service-db.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-mediawiki-db-service
+  name: {{ .Release.Name }}-mediawiki-db-srv
+  labels:
+    app: mediawiki-db
 spec:
   type: NodePort
   ports:
-    - protocol: 3306
-      port: 3306
-      targetPort: 30001
+    - port: 3306
+      targetPort: 3306
+      nodePort: 30001
   selector:
     app: mediawiki-db

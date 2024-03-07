@@ -1,9 +1,8 @@
+# templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-mediawiki-db
-  labels:
-    app: mediawiki-db
 spec:
   replicas: 1
   selector:
@@ -12,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app: mediawiki
+        app: mediawiki-db
     spec:
       containers:
         - name: mediawiki-db-container
