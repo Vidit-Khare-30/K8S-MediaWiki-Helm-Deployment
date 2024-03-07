@@ -1,1 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-mediawiki-config
+data:
+  LocalSettings.php: |
+    <?php
+    # Replace  content here once you have done the initial setup of localsettings.php
+    
+    ?>
 
